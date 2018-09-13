@@ -23,7 +23,7 @@ sub get_latest_version {
 }
 
 sub canon2native_arch_map {
-    +{
+    return +{
         'linux-x86' => 'linux',
         'linux-x86_64' => 'linux64',
         'win32' => 'win',
