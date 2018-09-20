@@ -48,6 +48,13 @@ sub get_download_url {
     # "https://archive.mozilla.org/pub/firefox/releases/62.0/source/"
 }
 
+sub get_programs {
+    my ($self, %args) = @_;
+    [200, "OK", [
+        {name=>"firefox", path=>"/"},
+    ]];
+}
+
 1;
 # ABSTRACT: Firefox
 
