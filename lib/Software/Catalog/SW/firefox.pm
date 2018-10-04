@@ -9,9 +9,15 @@ use warnings;
 
 use Role::Tiny::With;
 with 'Software::Catalog::Role::Software';
-with 'Software::Catalog::Role::VersionScheme::SemVer';
 
 use Software::Catalog::Util qw(extract_from_url);
+
+sub meta {
+    return {
+        homepage_url => "https://mozilla.org/firefox",
+        versioning_scheme => "Dotted",
+    };
+}
 
 sub get_latest_version {
     my ($self, %args) = @_;
