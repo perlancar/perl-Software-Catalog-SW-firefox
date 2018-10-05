@@ -8,6 +8,7 @@ use strict;
 use warnings;
 
 use Role::Tiny::With;
+with 'Versioning::Scheme::Dotted';
 with 'Software::Catalog::Role::Software';
 
 use Software::Catalog::Util qw(extract_from_url);
@@ -15,7 +16,6 @@ use Software::Catalog::Util qw(extract_from_url);
 sub meta {
     return {
         homepage_url => "https://mozilla.org/firefox",
-        versioning_scheme => "Dotted",
     };
 }
 
@@ -54,11 +54,13 @@ sub get_download_url {
     # "https://archive.mozilla.org/pub/firefox/releases/62.0/source/"
 }
 
-sub get_programs {
+sub get_archive_info {
     my ($self, %args) = @_;
-    [200, "OK", [
-        {name=>"firefox", path=>"/"},
-    ]];
+    [200, "OK", {
+        programs => [
+            {name=>"firefox", path=>"/"},
+        ],
+    }];
 }
 
 1;
