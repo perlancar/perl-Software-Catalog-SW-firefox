@@ -1,18 +1,18 @@
-0.004   2018-10-05 (PERLANCAR)
+0.004   2018-10-05  Released-By: PERLANCAR
 
 	- Update to Software::Catalog 1.0.3.
 
 
-0.003   2018-10-04 (PERLANCAR)
+0.003   2018-10-04  Released-By: PERLANCAR
 
 	- Add meta property: versioning_scheme.
 
 
-0.002   2018-09-20 (PERLANCAR)
+0.002   2018-09-20  Released-By: PERLANCAR
 
 	- Add get_programs().
 
 
-0.001   2018-09-13 (PERLANCAR)
+0.001   2018-09-13  Released-By: PERLANCAR
 
         - First release.
