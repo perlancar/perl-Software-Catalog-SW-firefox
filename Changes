@@ -1,4 +1,11 @@
-0.005   2019-10-26  Released-By: PERLANCAR; Urgency: medium
+0.006   2019-10-26  Released-By: PERLANCAR; Urgency: high
+
+	- No functional changes.
+
+        - [dist] Set release attribute's urgency to high.
+
+
+0.005   2019-10-26  Released-By: PERLANCAR; Urgency: high
 
 	- Update to Software::Catalog::Role::Software 1.0.6 (incompatible
 	  change, renamed methods).
