@@ -19,7 +19,7 @@ sub meta {
     };
 }
 
-sub get_latest_version {
+sub latest_version {
     my ($self, %args) = @_;
 
     extract_from_url(
@@ -37,7 +37,7 @@ sub canon2native_arch_map {
     },
 }
 
-sub get_download_url {
+sub download_url {
     my ($self, %args) = @_;
 
     # XXX version, language
@@ -54,7 +54,7 @@ sub get_download_url {
     # "https://archive.mozilla.org/pub/firefox/releases/62.0/source/"
 }
 
-sub get_archive_info {
+sub archive_info {
     my ($self, %args) = @_;
     [200, "OK", {
         programs => [
@@ -62,6 +62,8 @@ sub get_archive_info {
         ],
     }];
 }
+
+sub dedicated_profile { 1 }
 
 1;
 # ABSTRACT: Firefox
