@@ -1,6 +1,8 @@
 package Software::Catalog::SW::firefox;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -13,20 +15,16 @@ with 'Software::Catalog::Role::Software';
 
 use Software::Catalog::Util qw(extract_from_url);
 
-sub meta {
-    return {
-        homepage_url => "https://mozilla.org/firefox",
-    };
-}
-
-sub latest_version {
+sub archive_info {
     my ($self, %args) = @_;
-
-    extract_from_url(
-        url => "https://www.mozilla.org/en-US/firefox/all/",
-        re  => qr/ data-latest-firefox="([^"]+)"/,
-    );
+    [200, "OK", {
+        programs => [
+            {name=>"firefox", path=>"/"},
+        ],
+    }];
 }
+
+sub available_versions { [501, "Not implemented"] }
 
 sub canon2native_arch_map {
     return +{
@@ -54,16 +52,18 @@ sub download_url {
     # "https://archive.mozilla.org/pub/firefox/releases/62.0/source/"
 }
 
-sub archive_info {
-    my ($self, %args) = @_;
-    [200, "OK", {
-        programs => [
-            {name=>"firefox", path=>"/"},
-        ],
-    }];
-}
+sub homepage_url { "https://mozilla.org/firefox" }
 
-sub dedicated_profile { 1 }
+sub is_dedicated_profile { 1 }
+
+sub latest_version {
+    my ($self, %args) = @_;
+
+    extract_from_url(
+        url => "https://www.mozilla.org/en-US/firefox/all/",
+        re  => qr/ data-latest-firefox="([^"]+)"/,
+    );
+}
 
 1;
 # ABSTRACT: Firefox
