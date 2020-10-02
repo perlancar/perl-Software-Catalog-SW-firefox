@@ -65,6 +65,8 @@ sub latest_version {
     );
 }
 
+sub release_note { [501, "Not implemented"] }
+
 1;
 # ABSTRACT: Firefox
 
